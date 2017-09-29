@@ -1,0 +1,16 @@
+[paths]
+source =
+   src/tmod_tools
+   */site-packages/tmod_tools
+
+[run]
+branch = true
+source =
+    tmod_tools
+    tests
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*
