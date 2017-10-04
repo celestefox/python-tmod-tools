@@ -8,7 +8,7 @@ Why does this file exist, and why __main__? For more info, read:
 - https://docs.python.org/2/using/cmdline.html#cmdoption-m
 - https://docs.python.org/3/using/cmdline.html#cmdoption-m
 """
-from tmod_tools.cli import main
+from tmod_tools.cli import main  # pragma: no cover
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()
