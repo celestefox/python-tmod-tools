@@ -15,9 +15,26 @@ Why does this file exist, and why not put this in __main__?
   Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
 """
 import click
+import click_log
+import logging
+logger = logging.getLogger('tmod_tools') # We want to configure the base logger
+click_log.basic_config(logger)
 
+
+@click.group()
+@click.pass_context
+@click_log.simple_verbosity_option(logger)
+@click.version_option()
+def main(ctx):
+    if ctx.obj is None:
+        ctx.obj = {}
+    logger.debug("Main done.")
 
 @click.command()
-@click.argument('names', nargs=-1)
-def main(names):
-    click.echo(repr(names))
+@click.pass_context
+@click.option('-o', '--output', default=None, type=click.Path(file_okay=False), help="The directory to write the contents to.")
+@click.argument('file', type=click.File(mode='rb'))
+def extract(ctx, output, file):
+    pass
+
+main.add_command(extract)
