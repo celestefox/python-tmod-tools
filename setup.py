@@ -41,7 +41,8 @@ setup(
     zip_safe=False,
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 1 - Planning',
+        'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: ISC License (ISCL)',
         'Operating System :: Unix',
@@ -67,6 +68,8 @@ setup(
     ],
     install_requires=[
         'click',
+        'click-log',
+        'colorama',
     ],
     extras_require={
         # eg:
